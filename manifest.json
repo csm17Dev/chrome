@@ -23,5 +23,6 @@
     "clipboardWrite",
     "activeTab",
     "scripting"
-  ]
+  ],
+  "host_permissions": ["https://api.csmcat.kr/*"]
 }
