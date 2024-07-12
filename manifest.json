@@ -7,22 +7,9 @@
     "default_popup": "popup/popup.html",
     "default_icon": "hello_extensions.png"
   },
-  "content_scripts": [
-    {
-      "matches": ["<all_urls>"],
-      "js": ["scripts/content.js"]
-    }
-  ],
   "background": {
     "service_worker": "background.js"
   },
-  "permissions": [
-    "identity",
-    "identity.email",
-    "clipboardRead",
-    "clipboardWrite",
-    "activeTab",
-    "scripting"
-  ],
+  "permissions": ["identity", "identity.email", "activeTab", "scripting"],
   "host_permissions": ["https://api.csmcat.kr/*"]
 }

@@ -1,6 +1,14 @@
 <html>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
   <body>
     <h1>Hello Extensions</h1>
-    <script src="./popup/popup.js"></script>
+    <div class="InputWrapper">
+      <input id="inputText" type="text" placeholder="한글 수식을 입력하세요" />
+      <button id="convertBtn" onClick="submit">변환</button>
+    </div>
+    <div id="resultText"></div>
+    <script src="./popup.js"></script>
   </body>
 </html>
