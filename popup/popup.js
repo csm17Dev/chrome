@@ -1,5 +1,6 @@
 console.log("This is a popup!");
 const convertBtn = document.getElementById("convertBtn");
+const copyBtn = document.getElementById("copyBtn");
 
 convertBtn.addEventListener("click", (event) => {
   const inputText = document.getElementById("inputText").value;
@@ -15,3 +16,16 @@ convertBtn.addEventListener("click", (event) => {
     console.log("완료");
   });
 });
+
+copyBtn.addEventListener("click", (event) =>
+  writeClipboardText(document.getElementById("resultText").innerText)
+);
+
+async function writeClipboardText(text) {
+  try {
+    await navigator.clipboard.writeText(text);
+  } catch (error) {
+    console.error(error.message);
+  }
+  alert("복사 완료");
+}
