@@ -10,6 +10,16 @@
   "background": {
     "service_worker": "background.js"
   },
-  "permissions": ["identity", "identity.email", "activeTab", "scripting"],
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  },
+  "permissions": [
+    "identity",
+    "identity.email",
+    "activeTab",
+    "scripting",
+    "sidePanel",
+    "contextMenus"
+  ],
   "host_permissions": ["https://api.csmcat.kr/*"]
 }

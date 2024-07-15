@@ -34,3 +34,28 @@ async function getConvertedData(message, userEmail) {
   const convertedData = await response.text();
   return convertedData;
 }
+
+/**
+ * toolbar icon 클릭하면 side panel 열 수 있게 함
+ */
+// chrome.sidePanel
+//   .setPanelBehavior({ openPanelOnActionClick: true })
+//   .catch((error) => console.error(error));
+
+/**
+ * 컨텍스트 메뉴에 측면 패널 열기 추가
+ */
+chrome.runtime.onInstalled.addListener(() => {
+  chrome.contextMenus.create({
+    id: "openSidePanel",
+    title: "Latex로 변환하기",
+    contexts: ["all"],
+  });
+});
+
+chrome.contextMenus.onClicked.addListener((info, tab) => {
+  if (info.menuItemId === "openSidePanel") {
+    // This will open the panel in all the pages on the current window.
+    chrome.sidePanel.open({ windowId: tab.windowId });
+  }
+});
